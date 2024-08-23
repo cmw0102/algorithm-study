@@ -47,3 +47,11 @@ for i in range(M-7):
         result.append(color_black)
         result.append(color_white)
 print(min(result))
+
+# 결론
+# 결국 첫 시작 지점의 색이 검정색, 흰색 둘 중 하나이기 때문에 두가지 경우의 수 밖에 없다.
+# 체스판의 경우 첫 시작지점의 색을 기준으로 짝수 칸은 같은색, 홀수 칸은 다른색으로 존재해야한다.
+# 따라서 첫 시작지점의 색을 기준으로 짝수 칸, 홀수 칸의 색을 칠하는데
+# 이때, color_black의 값이 +1 되었을 경우 color_white에게는 아무런 영향을 주지 않는다.
+# 왜냐하면, color_black의 입장에서는 올바르지 않기 때문에 색을 알맞게 칠한 것이고 +1을 해준것 이지만
+# color_white의 입자에서는 올바르기 때문에 아무런 변화가 없는 것이다!!
