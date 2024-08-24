@@ -23,27 +23,25 @@ for i in range(M):
 
 for i in range(M-7):
     for j in range(N-7):
-        color_black = 0  # 검정색이 아닐때 증가(검정색을 칠하기 위해)
-        color_white = 0  # 흰색이 아닐때 증가(흰색을 칠하기 위해)
+        color_black = 0  # 첫 시작 지점의 색이 검정색인 경우
+        color_white = 0  # 첫 시작 지점의 색이 흰색인 경우
         for a in range(i, i + 8):  # 체스의 크기인
             for b in range(j, j + 8):  # 8*8 크기를 구현하기 위해 +8로 설정
+                # 짝수 칸
                 if (a + b) % 2 == 0:  # a + b를 2로 나눈 값이 홀수 인지 짝수 인지 구분하여 어떠한 색을 추가할지 조건문을 통해 해결
-                    # if문과 else문을 기준으로
-                    # (a+b) % 2 = 0일 때 검정, 흰색이 아닐 경우 각각 검정, 흰색을 칠하고
-                    # (a+b) % 2 = 0이 아닐 때 검정, 흰색이 아닐 경우 각각 흰색, 검정을 칠하는 이유는
-                    # 0인경우, 0이 아닌 경우 둘 중 첫 시작이 되는 부분 있을 텐데
-                    # 첫 시작부분을 칠하고 그 옆은 반드시 체스 판의 규칙에 따라 반대되는 색상을 칠해야 하므로
-                    # 조건을 반대되게 걸어 놓은 것이다!!
-
-                    if board[a][b] != 'B':  # 첫 시작 지점이 검정이 아닐 경우
-                        color_black += 1  # 검정색을 칠해줌
-                    if board[a][b] != 'W':  # 첫 시작 지점이 흰색이 아닐 경우
-                        color_white += 1  # 흰색을 칠해줌
+                    # if문과 else문을 통해
+                    # 행과 열의 합을 기준으로 짝수칸, 홀수칸을 구분짓는다.
+                    # 결론 부분의 내용처럼 짝수칸인지 홀수칸인지 상황에 따라 어떠한 경우의 수(첫 시작 지점의 색이 흰색인지 검정색인지)에 +1을 해야할지 정하는 코드이다.
+                    if board[a][b] != 'B':  # 해당 좌표가 검정이 아닌 경우
+                        color_black += 1
+                    if board[a][b] != 'W':  # 해당 좌표가 흰색이 아닌 경우
+                        color_white += 1
+                # 홀수 칸
                 else:
-                    if board[a][b] != 'W':  # 첫 시작 지점이 흰색이 아닐 경우
-                        color_black += 1  # 검정색을 칠해줌
-                    if board[a][b] != 'B':  # 첫 시작 지점이 검정이 아닐 경우
-                        color_white += 1  # 흰색을 칠해줌
+                    if board[a][b] != 'W':  # 해당 좌표가 흰색이 아닌 경우
+                        color_black += 1
+                    if board[a][b] != 'B':  # 해당 좌표가 검정이 아닌 경우
+                        color_white += 1
         result.append(color_black)
         result.append(color_white)
 print(min(result))
