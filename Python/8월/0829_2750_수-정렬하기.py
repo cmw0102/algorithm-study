@@ -35,6 +35,7 @@ for i in range(n):
 
 
 # 선택 정렬 (처음에 본인이 작성한 코드)
+# import sys
 input = sys.stdin.readline
 n = int(input())  # 입력할 수의 개수 입력
 n_list = []
@@ -63,3 +64,26 @@ for i in range(n):
 # [처음 작성한 코드는 런타임 에러가 발생했음]
 # 선택 정렬이라는 개념을 아는 것을 별개로 이를 코드로 구현한다는게 상당히 어렵고 복잡한 것 같다...
 # 열심히 하자.
+
+# ++ 삽입 정렬
+# https://velog.io/@aosdbfc/Python-%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-7.1.-%EB%B2%84%EB%B8%94%EC%84%A0%ED%83%9D%EC%82%BD%EC%9E%85-%EC%A0%95%EB%A0%AC
+# 위 블로그를 참조하여 삽입정렬을 어떻게 구현하는지 개념을 공부한 후
+# 참고하여 문제를 풀기위한 코드에 녹였다.
+# 정렬에 대해서 이해를 많이 하고 체화시켜야겠다!!!
+# import sys
+input = sys.stdin.readline
+n = int(input())
+n_list = []
+
+for i in range(n):
+    n_list.append(int(input()))
+
+for i in range(1, n):
+    for j in range(i, 0, -1):
+        if n_list[j] < n_list[j-1]:  # 앞 뒤의 수 비교
+            n_list[j], n_list[j-1] = n_list[j-1], n_list[j]
+        else:
+            break
+
+for i in range(n):
+    print(n_list[i])
