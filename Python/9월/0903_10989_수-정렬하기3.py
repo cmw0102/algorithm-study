@@ -1,17 +1,34 @@
 # 10989_수-정렬하기3
 
+# 문제 분석
+# 기존의 수-정렬하기2 와 비슷한 문제이다.
+
+# 해결 과정
+# 첫 번째 - 실패(시간 초과)
+# 기존과 유사한 방식으로 진행
+
+# 두 번째
+# 블로그 참고 하기
+
 import sys
 
 n = int(sys.stdin.readline())
-num_list = [0] * 10001
+n_list = [0] * 10001
 
 for _ in range(n):
-    num_list[int(sys.stdin.readline())] += 1
+    n_list[int(sys.stdin.readline())] += 1
 
 for i in range(10001):
-    if num_list[i] != 0:
-        for j in range(num_list[i]):
+    if n_list[i] != 0:
+        for j in range(n_list[i]):
             print(i)
 
+# 결론
+# 도저히 생각이 안나서 구글링을 하여 블로그 코드를 공부하기로 했다.
+# input을 사용하는 것 보다 사용하지 않고 바로 int(sys.stdin.readline())을 사용하는 것이 대용량 처리시 더 효율적이다.
+# 각각 한 줄 씩 입력한 수를 미리 만든 리스트의 인덱스 중 동일한 인덱스를 +1 함으로써 몇개를 출력할지 결정한다.
+# 그 후, 아무것도 없는 즉, 인덱스 값이 0인 인덱스는 무시하고 인덱스 값이 1이상인 인덱스만 순서대로 출력한다.
+# 시간 복잡도는 O(n + k)이다. n은 숫자의 계수, k는 숫자의 최대 범위(여기서는 10,000)
 # 메모리 아끼는 거 어렵다...
+# 센스 배우고 싶다..
 # 출처: https://yoonsang-it.tistory.com/49
