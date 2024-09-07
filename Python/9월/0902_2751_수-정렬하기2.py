@@ -33,7 +33,7 @@ for _ in range(n):
     n_list.append(int(input()))
 
 n_list.sort()   # sort() 함수를 사용하면 오름차순으로 정렬됨
-# 내림차순 정렬시 sort(reverse=False)를 사용하면 됨
+# 내림차순 정렬시 sort(reverse=True)를 사용하면 됨
 
 for i in range(n):
     print(n_list[i])
