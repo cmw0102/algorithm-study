@@ -34,6 +34,12 @@ m_list = list(map(int, input().split()))
 
 n_set = set(n_list)
 m_dict = {item: 1 if item in n_set else 0 for item in m_list}
+# 컴프리헨션 풀면 이렇게 됨
+# for i in m_list:
+#         if i in n_set:
+#             m_dict[i] = 1
+#         else:
+#             m_dict[i] = 0
 
 for i in m_list:
     print(m_dict[i], end=" ")
