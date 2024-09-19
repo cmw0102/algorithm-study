@@ -5,7 +5,7 @@
 # enter인 경우 출근, leave인 경우 퇴근
 
 # 해결 과정
-# 첫 번째 - 실패
+# 첫 번째 - 실패(런타임 에러)
 # 입력받은 이름을 변수에 담아 set구성
 # leave가 있는 이름은 저 set에서 제거
 # 맨처름 만든 set에 있는 이름 출력
@@ -25,7 +25,7 @@ for i in range(n):
     if n_list[i][1] == "leave":
         n_set.remove(n_list[i][0])
 
-for name in n_set:
+for name in sorted(n_set, reverse=True):
     print(name)
 
 
