@@ -17,3 +17,8 @@ SELECT PT_NAME, PT_NO, GEND_CD, AGE, IFNULL(TLNO, 'NONE') AS TLNO
 FROM PATIENT
 WHERE AGE <= '12' AND GEND_CD = 'W'
 ORDER BY AGE DESC, PT_NAME;
+
+-- 복기사항
+-- IFNULL 함수
+-- => NULL인 경우 대체할 값을 지정할 수 있음
+-- => IFNULL(컬럼명, '대체할 값')
