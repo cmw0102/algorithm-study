@@ -23,3 +23,10 @@ FROM CAR_RENTAL_COMPANY_CAR
 WHERE OPTIONS LIKE '%통풍시트%' OR OPTIONS LIKE '%열선시트%' OR OPTIONS LIKE '%가죽시트%'
 GROUP BY CAR_TYPE
 ORDER BY CAR_TYPE;
+
+-- 복기사항
+-- IN 연산자의 경우 예를 들어 WHERE 열 IN ('a', 'b', 'c') 일 경우 어떠한 행에 a, b가 있으면 해당 열을 출력하지 않는다.
+-- 따라서 LKIE를 이용하여 찾아야한다.
+-- 즉,
+-- IN 연산자는 단일 값이 비교 리스트 중 하나와 정확히 일치할 때만 작동한다.
+-- OPTIONS에 여러 값이 있는 경우, 이를 분리해서 개별 값으로 비교하거나, 문자열 검색(LIKE), 또는 정규화를 사용해야 한다.
