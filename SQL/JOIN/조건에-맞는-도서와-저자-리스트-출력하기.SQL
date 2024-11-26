@@ -1,0 +1,30 @@
+-- 문제 설명
+-- 다음은 어느 한 서점에서 판매중인 도서들의 도서 정보(BOOK), 저자 정보(AUTHOR) 테이블입니다.
+
+-- BOOK 테이블은 각 도서의 정보를 담은 테이블로 아래와 같은 구조로 되어있습니다.
+
+-- Column name	Type	Nullable	Description
+-- BOOK_ID	INTEGER	FALSE	도서 ID
+-- CATEGORY	VARCHAR(N)	FALSE	카테고리 (경제, 인문, 소설, 생활, 기술)
+-- AUTHOR_ID	INTEGER	FALSE	저자 ID
+-- PRICE	INTEGER	FALSE	판매가 (원)
+-- PUBLISHED_DATE	DATE	FALSE	출판일
+-- AUTHOR 테이블은 도서의 저자의 정보를 담은 테이블로 아래와 같은 구조로 되어있습니다.
+
+-- Column name	Type	Nullable	Description
+-- AUTHOR_ID	INTEGER	FALSE	저자 ID
+-- AUTHOR_NAME	VARCHAR(N)	FALSE	저자명
+
+-- 문제
+-- '경제' 카테고리에 속하는 도서들의 도서 ID(BOOK_ID), 저자명(AUTHOR_NAME), 출판일(PUBLISHED_DATE) 
+-- 리스트를 출력하는 SQL문을 작성해주세요.
+-- 결과는 출판일을 기준으로 오름차순 정렬해주세요.
+
+SELECT BOOK_ID, AUTHOR_NAME, DATE_FORMAT(PUBLISHED_DATE, '%Y-%m-%d') AS PUBLISHED_DATE
+FROM BOOK b JOIN AUTHOR a ON b.AUTHOR_ID = a.AUTHOR_ID
+WHERE CATEGORY = '경제'
+ORDER BY PUBLISHED_DATE;
+
+-- 복기 사항
+-- 1. JOIN을 사용할 때, 두 테이블의 컬럼명이 같은 경우에는 테이블명을 명시해주어야 한다.
+-- 2. DATE_FORMAT 함수를 사용하여 날짜를 원하는 형식으로 출력할 수 있다.
