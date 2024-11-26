@@ -28,3 +28,4 @@ ORDER BY PUBLISHED_DATE;
 -- 복기 사항
 -- 1. JOIN을 사용할 때, 두 테이블의 컬럼명이 같은 경우에는 테이블명을 명시해주어야 한다.
 -- 2. DATE_FORMAT 함수를 사용하여 날짜를 원하는 형식으로 출력할 수 있다.
+-- 3. ORDER BY를 사용할 때는 SELECT에 있는 컬럼명을 ORDER BY에도 써줘야 한다.
