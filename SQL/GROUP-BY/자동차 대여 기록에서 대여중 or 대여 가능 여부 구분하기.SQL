@@ -37,3 +37,12 @@ END AS AVAILABILITY
 FROM CAR_RENTAL_COMPANY_RENTAL_HISTORY
 GROUP BY CAR_ID
 ORDER BY CAR_ID DESC;
+
+-- 복기사항
+-- 1. CASE WHEN을 사용하여 조건에 따라 다른 값을 출력할 수 있다.
+-- 2. CASE문에서 서브쿼리를 사용한 이유: 
+--    CAR_ID값이 서브쿼리를 통해 이미 필터링 된 경우 동일한 CAR_ID값이 있어도 
+--    CAR_ID값을 무시하고 '대여중'으로 표시되어야 하기 때문이다.(이미 대여중인 경우 대여 가능으로 표시되면 안됨)
+-- 2-1. 서브쿼리는 CAR_ID 단위로 값을 반환하기 때문에, 
+--      중복된 CAR_ID가 있다면 그 자체로는 중요하지 않고, 
+--      해당 CAR_ID가 결과에 포함되는지 여부만 평가된다.
